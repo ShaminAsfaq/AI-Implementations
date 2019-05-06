@@ -72,24 +72,6 @@ public class FXMLDocumentController implements Initializable {
         
         int globalDimension = numberOfQueens;
 
-//         Time delay to watch the process output
-//        int conspiracy = 1000000000;
-//        int theory = 1000000000;
-//        int intact = 1000000000;
-//        int together = 1000000000;
-//        while (conspiracy >= 0) {
-//            while (theory >= 0) {
-//                while(intact >= 0){
-//                    while(together >= 0){
-//                        --together;
-//                    }
-//                    --intact;
-//                }
-//                --theory;
-//            }
-//            --conspiracy;
-//        }
-
 //        Timer starts
         long start = System.currentTimeMillis();
 
@@ -98,7 +80,6 @@ public class FXMLDocumentController implements Initializable {
         for (int r = 0; r < globalDimension; r++) {
             for (int col = 0; col < globalDimension; col++) {
                 int random = (int) Math.floor(Math.random() * (globalDimension - 1));
-//                        System.out.println(" ////////////////// " + random);
                 board[random][r] = 1;
                 break;
             }
@@ -106,7 +87,6 @@ public class FXMLDocumentController implements Initializable {
 
         int totalIterations = 0;
 
-//        int heuristic = findHeuristic(board);
         int[][] heuristicTable = new int[globalDimension][globalDimension];
         int lowestHeuristic = 100000;
 
@@ -126,7 +106,6 @@ public class FXMLDocumentController implements Initializable {
         }
 
         while (lowestHeuristic != 0) {
-//            gridPane = new GridPane();
             ++totalIterations;
             for (int i = 0; i < globalDimension; i++) {
                 for (int j = 0; j < globalDimension; j++) {
@@ -157,19 +136,15 @@ public class FXMLDocumentController implements Initializable {
                             newBoard[temp][col] = 0;
                             newBoard[row][col] = 1;
                         }
-                        //                    break;
                     }
-                    //                break;
                 }
             }
 
             ++flag[lowestHeuristic];
-//                if (totalIterations == 5 && lowestHeuristic == 1) {
             if (flag[lowestHeuristic] == 5) {
                 for (int it = 0; it < (globalDimension * globalDimension); it++) {
                     flag[it] = 0;
                 }
-//                if (flag) {
                 totalIterations = 0;
                 lowestHeuristic = 100000;
 
@@ -183,7 +158,6 @@ public class FXMLDocumentController implements Initializable {
                 for (int r = 0; r < globalDimension; r++) {
                     for (int col = 0; col < globalDimension; col++) {
                         int random = (int) Math.floor(Math.random() * (globalDimension - 1));
-//                            System.out.println(" ////////////////// " + random);
                         board[random][r] = 1;
                         break;
                     }
