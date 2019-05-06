@@ -3,6 +3,7 @@
 "AI Basic Implementations" contains a console application that takes in a value for N and tries to solve the infamous N-Queen problem. There's 2 files within this project.
 
 One: This one uses the Hill Climbing Algorithm to solve the N-Queen problem.
+
 Two: This one uses a rather simpler technique, recursion, to solve the same problem.
 
 
